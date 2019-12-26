@@ -1,0 +1,28 @@
+setwd("/Volumes/SAMSUNG_T5/Thesis/EEM/3-D_spectra/sed_extracts_122019")
+
+library("eemR", lib.loc="/Library/Frameworks/R.framework/Versions/3.5/Resources/library")
+library("ggplot2", lib.loc="/Library/Frameworks/R.framework/Versions/3.5/Resources/library")
+library("staRdom", lib.loc="/Library/Frameworks/R.framework/Versions/3.5/Resources/library")
+library("dbplyr", lib.loc="/Library/Frameworks/R.framework/Versions/3.5/Resources/library")
+library("dplyr", lib.loc="/Library/Frameworks/R.framework/Versions/3.5/Resources/library")
+
+eem_list <- eem_read_csv("CSV")
+#eem_overview_plot(eem_list, spp=8)
+eem_list <- eem_extend2largest(eem_list, interpolation = 1, extend = FALSE)
+#eem_list <- eem_remove_blank(eem_list)
+#eem_overview_plot(eem_list, spp=8)
+#eem_list <- eem_raman_normalisation2(eem_list, blank = "blank")
+#eem_overview_plot(eem_list, spp=8)
+eem_list <- eem_extract(eem_list, c("nano", "miliq", "milliq", "mq", "blank"),ignore_case = TRUE)
+remove_scatter <- c(TRUE, TRUE, TRUE, TRUE)
+remove_scatter_width <- c(15,15,15,15)
+eem_list <- eem_rem_scat(eem_list, remove_scatter = remove_scatter, remove_scatter_width = remove_scatter_width)
+#eem_overview_plot(eem_list, spp=8)
+eem_list <- eem_interp(eem_list, type = 1, extend = FALSE)
+eem_overview_plot(eem_list, spp=6)
+
+peaks <- eem_coble_peaks(eem_list)
+
+FI <- eem_fluorescence_index(eem_list, verbose = TRUE)
+eem_humification_index(eem_list, scale = FALSE, verbose = TRUE)
+BI <- eem_biological_index(eem_list)
