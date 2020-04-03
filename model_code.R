@@ -1,27 +1,4 @@
-#install.packages("staRdom")
-library("staRdom")
-#install.packages("devtools") # Run this only, if devtools is not installed already.
-#devtools::install_github("MatthiasPucher/staRdom")
-library("eemR")
-#system.file("extdata/EEMs", package = "staRdom")
-eem_list <- eem_read("percent_corrected", import_function = eem_csv)
-t <- absorbance_read("extdata/absorbance")
-eem_overview_plot(eem_list, spp=8)
-eem_list <- eem_raman_normalisation2(eem_list, blank = "blank")
-eem_overview_plot(eem_list, spp=8)
-eem_list <- eem_extract(eem_list, c("nano", "miliq", "milliq", "mq", "blank"),ignore_case
-                        = TRUE)
-
-remove_scatter <- c(TRUE, TRUE, TRUE, TRUE)
-remove_scatter_width <- c(15,15,15,15)
-eem_list <- eem_rem_scat(eem_list, remove_scatter = remove_scatter, remove_scatter_width
-                         = remove_scatter_width)
-eem_overview_plot(eem_list, spp=6)
-eem_list <- eem_interp(eem_list, type = 1, extend = FALSE)
-eem_overview_plot(eem_list, spp=6)
-eem4peaks <- eem_smooth(eem_list, n = 4)
-eem_overview_plot(eem4peaks, spp=6)
-summary(eem_list)
+#Run this entire script to create the necessary functions into your working environment
 
 eem_parafac <- function(eem_list, comps, maxit = 7000, normalise = TRUE, const = c("nonneg","nonneg","nonneg"), nstart = 30, ctol = 10^-8, strictly_converging = FALSE, cores = parallel::detectCores(logical=FALSE), verbose = FALSE, output = "best",...){
   eem_array <- eem2array(eem_list)
