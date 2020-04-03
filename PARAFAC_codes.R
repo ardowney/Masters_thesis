@@ -24,14 +24,22 @@ maxit = 7000
 ctol <- 10^-7 # tolerance for parafac
 
 #runnigng the model
-pfres_comps <- eem_parafac(eem_list, comps = seq(dim_min, dim_max),
-                           normalise = TRUE, maxit = maxit, nstart = nstart, ctol = ctol, cores = cores)
 
-pfres_comps2 <- eem_parafac(eem_list, comps = seq(dim_min, dim_max),
+
+pfres_comps <- eem_parafac(eem_list, comps = seq(dim_min, dim_max),
                             normalise = TRUE, maxit = maxit, nstart = nstart, ctol = ctol, cores = cores, output = "all")
 
+#Six models are generated within the "pfres_comps" list 
+#the following code shoould be ran six times
+#each time changing line 34 to analyze one of the six generated models, like so:
+#pfmodel <- pfres_comps[[1]]
+#pfmodel <- pfres_comps[[2]]
+#pfmodel <- pfres_comps[[3]]
+#pfmodel <- pfres_comps[[4]]
+#pfmodel <- pfres_comps[[5]]
+#pfmodel <- pfres_comps[[6]]
 
-pfmodel <- pfres_comps2[[1]]
+pfmodel <- pfres_comps[[1]]
 
 eempf_comp_mat(pfmodel)
 
