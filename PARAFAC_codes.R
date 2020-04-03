@@ -15,7 +15,7 @@ library(grDevices)
 library(plotly)
 library(GGally)
 
-eem_list <- eem_read("percent_corrected", import_function = eem_csv)
+eem_list <- eem_read("percent_corrected", import_function = eem_csv) #chnage this line to the desired file path 
 dim_min <- 2 # minimum number of components
 dim_max <- 7 # maximum number of components
 nstart <- 45 # random starts for PARAFAC analysis, models built simulanuously, best selected
@@ -23,6 +23,7 @@ cores <- parallel::detectCores(logical=FALSE) # use all cores but do not use all
 maxit = 7000
 ctol <- 10^-7 # tolerance for parafac
 
+#runnigng the model
 pfres_comps <- eem_parafac(eem_list, comps = seq(dim_min, dim_max),
                            normalise = TRUE, maxit = maxit, nstart = nstart, ctol = ctol, cores = cores)
 
