@@ -1,29 +1,29 @@
 # Physical and chemical properties of clastic cave sediment from the northern karst region of Puerto Rico 
 
-##R scripts include:
-Organizing raw particle size data from a Beckman Coulter single wavelength LS13-320 particle size analyzer from the instrument into a csv format
+## R scripts include:
+### Organizing raw particle size data from a Beckman Coulter single wavelength LS13-320 particle size analyzer from the instrument into a csv format
 
-post-processing fluorescence spectroscopy data from a Horiba Fluorolog-3
+### post-processing fluorescence spectroscopy data from a Horiba Fluorolog-3
 
-PARAFAC modeling of EEM data
+### PARAFAC modeling of EEM data
 
-PCA analysis
+### PCA analysis
 
-Pearson Correlation Matrix 
+### Pearson Correlation Matrix 
 
-##Prerequisites:
-Communication with Unix Shell
+## Prerequisites:
+### Communication with Unix Shell
 
 ##Necessary R packages:
-	###Particle size - install.packages("tidyverse")
-      			 install.packages("dplyr")
-      			 install.packages("readxl") 
-      			 install.packages("ggplot2")
-      			 install.packages("colorspace")
-      			 install.packages("scales")
-###Fluorescence data – install.packages("eemR")
-install.packages("ggplot2")
-install.packages("staRdom")
+	###Particle size -### install.packages("tidyverse")
+      			 ###  install.packages("dplyr")
+      			 ###  install.packages("readxl") 
+      			 ###  install.packages("ggplot2")
+      			 ###  install.packages("colorspace")
+      			 ###  install.packages("scales")
+## Fluorescence data – ### install.packages("eemR")
+		       ### install.packages("ggplot2")
+		       ### install.packages("staRdom")
 install.packages("dbplyr")
 install.packages("dplyr")
 ###PARAFAC model - install.packages(dplyr)
