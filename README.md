@@ -15,26 +15,31 @@ Pearson Correlation Matrix
 Communication with Unix Shell
 
 ### Necessary R packages:
-Particle size -
-'''
+- Particle size 
+```
 install.packages("tidyverse")
 install.packages("dplyr")
 install.packages("readxl") 
 install.packages("ggplot2")
 install.packages("colorspace")
 install.packages("scales")
-'''
-## Fluorescence data – ### install.packages("eemR")
-		       ### install.packages("ggplot2")
-		       ### install.packages("staRdom")
+```
+- Fluorescence data 
+```
+install.packages("eemR")
+install.packages("ggplot2")
+install.packages("staRdom")
 install.packages("dbplyr")
 install.packages("dplyr")
-###PARAFAC model - install.packages(dplyr)
- install.packages(multiway)
- install.packages(staRdom)
- install.packages(eemR)
- install.packages(parallel)
- install.packages(devtools)
+```
+- PARAFAC model  
+```
+install.packages(dplyr)
+install.packages(multiway)
+install.packages(staRdom)
+install.packages(eemR)
+install.packages(parallel)
+install.packages(devtools)
  install.packages(tidyverse)
  install.packages(stats)
  install.packages(pracma)
