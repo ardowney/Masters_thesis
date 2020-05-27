@@ -1,7 +1,7 @@
 setwd("/Volumes/SAMSUNG_T5/Thesis/data/particle_size/sample_organized")
 size_file <- "particle_size_bins.txt"
 size <- read.delim(size_file, header = FALSE)
-setwd("/Volumes/SAMSUNG_T5/Thesis/data/particle_size/sample_organized/TAL-01")
+setwd("/Volumes/SAMSUNG_T5/Thesis/data/particle_size/sample_organized/TAL-15")
 files <- list.files()
 bins <- data.frame(size)
 row.names(bins) <- bins[1:92,]
@@ -13,4 +13,4 @@ for (xfile_name in files) {
 }
 
 colnames(bins) <- files
-write.csv(bins, file = "TAL-01.csv")
+write.csv(bins, file = "TAL-15.csv")
