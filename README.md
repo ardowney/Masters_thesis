@@ -77,33 +77,24 @@ install.packages(ggpmisc)
 ### script name and function:
 
 particle size:
-- cut_loop.sh 
-Unix shell script organizing raw data from the instrument. transforms proprietary file extension to flat text file (.txt) and sends to a new organized directory. 
+- cut_loop.sh - Unix shell script organizing raw data from the instrument. transforms proprietary file extension to flat text file (.txt) and sends to a new organized directory. 
 
-- Particle size.R 
-applies particle size bins from the instrument to the organized data created by cut_loop.sh. 
+- Particle size.R - Applies particle size bins from the instrument to the organized data created by cut_loop.sh. 
 
-- Averaging_script.R 
-takes the average of the three replicates ran for each subsample. 
+- Averaging_script.R - Takes the average of the three replicates ran for each subsample. 
 
 Fluorescence data: 
-- Scatter_code.R 
-plots EEM data stored as a csv. Removes 15 nm 1st and 2nd order Rayleigh scattering. Smooths the EEM by interpreting intensity through the Rayleigh regions. Sends corrected files to a modified csv file. 
+- Scatter_code.R - Plots EEM data stored as a csv. Removes 15 nm 1st and 2nd order Rayleigh scattering. Smooths the EEM by interpreting intensity through the Rayleigh regions. Sends corrected files to a modified csv file. 
 
-- Percent_function.R
-normalizes corrected EEM to the max intensity of each scan. 
+- Percent_function.R - Normalizes corrected EEM to the max intensity of each scan. 
 
 PARAFAC model:
-- Model_functions.R 
-Functions needed to run the PARAFAC model
+- Model_functions.R - Functions needed to run the PARAFAC model
 
-- PARAFAC_code.R 
-script for creating 2-7 component models using user defined EEM data. 
+- PARAFAC_code.R - Script for creating 2-7 component models using user defined EEM data. 
 
 PCA: 
-- PCA.R 
-creates PCA output for user defined data. Outputs include biplots, variance plots, eigenvalues, and standard PCA scatter plots. 
+- PCA.R - Creates PCA output for user defined data. Outputs include biplots, variance plots, eigenvalues, and standard PCA scatter plots. 
 
 Pearson Correlation Matrix:
-- Cor_matrix_function.R 
-creates correlation matrix with R and p values exported to a csv file. R values and p values plots are included within the code.  
+- Cor_matrix_function.R - Creates correlation matrix with R and p values exported to a csv file. R values and p values plots are included within the code.  
